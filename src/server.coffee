@@ -47,4 +47,4 @@ app.use (ctx) ->
 
 app.listen(SERVER_PORT)
 
-console.log "Server listening at http://localhost:12000"
+console.log "Server listening at http://localhost:" + port
