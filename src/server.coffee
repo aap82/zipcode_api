@@ -38,6 +38,7 @@ app.use router.routes()
 app.use router.allowedMethods()
 
 app.use (ctx) ->
+  ctx.redirect '/display'
   ctx.body = 'Unknown route. Only routes available: /insert/, /delete/, /has/ or /display'
 
 
