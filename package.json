@@ -1,0 +1,25 @@
+{
+  "name": "api_challenge",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "coffeescript": "^2.0.0-beta2",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-compress": "^2.0.0",
+    "koa-router": "^7.2.0",
+    "zipcodes": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "compile-coffee": "coffee -bcw --no-header -o ./compiled/ ./src",
+    "start-dev": "nodemon --watch compiled compiled/server.js --exec babel-node",
+    "dev": "run-p \"compile-coffee\" \"start-dev\"",
+    "build": "coffee -bc --no-header -o ./compiled/ ./src && babel compiled -d lib",
+    "start": "yarn build && node lib/server.js"
+  }
+}
